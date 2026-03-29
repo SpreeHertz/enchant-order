@@ -1,6 +1,7 @@
 @font-face {
-  font-family: "Monocraft";
-  src: url(fonts/MONOCRAFT/Monocraft.ttf) format("truetype");
+  font-family: "Geist";
+  src: url(fonts/GeistVF.ttf) format("truetype");
+  font-weight: 100 900;
   font-weight: normal;
   font-style: normal;
 }
@@ -26,7 +27,7 @@
 }
 
 body {
-  font-family: arial, serif;
+  font-family: "Geist", sans-serif;
   position: relative;
   background-color: #e3e4eb;
 }
@@ -56,7 +57,7 @@ html[data-theme="light"] {
   --table-group1: #eee;
   --table-group2: #ddd;
   --echlevel-color: var(--link-primary);
-  --echlevel-shadow: #888;
+  --echlevel-shadow: #c3c3c3;
   --progress-color: #caca1a;
   --error: #ad3737;
   --phone-warn: #fff200;
@@ -66,14 +67,14 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --bg-primary: #373737;
   --bg-secondary: #212121;
-  --fg-primary: white;
-  --selection-color: #00dc76;
+  --fg-primary: rgb(228, 228, 228);
+  --selection-color: #00af34;
   --enchantment-selection: #0e754d;
   --link-primary: #66b3ff;
   --link-hover: #4d8ac3;
-  --table-text: #333;
-  --table-group1: #c6c6c6;
-  --table-group2: #d7d7d7;
+  --table-text: #e4e4e4;
+  --table-group1: #595959;
+  --table-group2: #606060;
   --echlevel-color: var(--link-primary);
   --echlevel-shadow: #888;
   --progress-color: #f1a32f;
@@ -131,6 +132,10 @@ body h2 {
   margin: 5px;
 }
 
+p {
+  max-width: 800px;
+}
+
 #mode_selection > label > input[type="radio"]:checked + span {
   transition: color 0.3s ease;
   color: var(--selection-color);
@@ -181,7 +186,7 @@ a:hover {
 }
 
 #enchants tr {
-  font-family: "Monocraft", sans-serif;
+  font-family: "Geist", sans-serif;
   color: var(--table-text);
 }
 
@@ -198,11 +203,11 @@ a:hover {
 }
 
 #enchants button {
-  font-family: "Monocraft", sans-serif;
+  font-family: "Geist", sans-serif;
   background-color: var(--bg-primary);
   padding: 10px;
   vertical-align: top;
-  box-shadow: 2px 1px 2px var(--echlevel-shadow);
+  /* box-shadow: 2px 1px 2px var(--echlevel-shadow); */
   color: var(--fg-primary);
   margin: 2px 0px 2px 0px;
   border-radius: 10px;
@@ -217,12 +222,18 @@ a:hover {
 }
 
 #calculate {
-  padding: 8px;
-  font-size: 120%;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #00af34 !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 #calculate:hover {
   background-color: var(--selection-color);
+  border-color: var(--selection-color);
+  color: white;
 }
 
 #calculate:active {
@@ -249,9 +260,14 @@ a:hover {
   padding: 5px 10px;
 }
 
+#overrides > div > label:has(input[type="checkbox"]:checked) {
+  background-color: var(--selection-color);
+  border-color: var(--selection-color);
+}
+
 #overrides > div > label > input[type="checkbox"]:checked + span {
   transition: color 0.3s ease;
-  color: var(--selection-color);
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
