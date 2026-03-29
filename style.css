@@ -55,7 +55,7 @@ html[data-theme="light"] {
   --link-hover: #2c54ce;
   --table-text: #191715;
   --table-group1: #eee;
-  --table-group2: #ddd;
+  --table-group2: #e9e9e9;
   --echlevel-color: var(--link-primary);
   --echlevel-shadow: #c3c3c3;
   --progress-color: #caca1a;
